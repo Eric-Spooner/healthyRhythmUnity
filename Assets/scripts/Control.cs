@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class Control : MonoBehaviour {
 
 	private Image controlKross;
-	double halfScreenHorizontal = Screen.width / 2.0;
-	double halfScreenVertical = Screen.height / 2.0;
 
 	// Use this for initialization
 	void Start () {
@@ -18,14 +16,7 @@ public class Control : MonoBehaviour {
 	//void Update () {
 	public void androidReceiveSignal(string value) {
         int intVal = int.Parse(value);
-        if (intVal > 0)
-        {
-           controlKross.fillAmount = 100;
-        }
-        else
-        {
-            controlKross.fillAmount = 0;
-        }
+        controlKross.fillAmount = intVal;
 	}
 
 }
